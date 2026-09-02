@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALVA — Vamos organizar tudo para ti</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MALVA — Vamos organizar tudo para ti</h1>
+    </header>
+
+    <div id="welcome" class="section welcome-section">
+      <div class="welcome-text">
+        <p>Olá, Paula.</p>
+        <p>Para te ajudar a organizar a MALVA online, precisamos de perceber melhor como funciona o teu negócio.</p>
+        <p>Este questionário demora cerca de 10 minutos.</p>
+        <p>Podes responder com calma e avançar ao teu ritmo.</p>
+        <p>Basta escolheres as opções que fazem sentido para ti.</p>
+        <p>Se não tiveres a certeza, podes deixar em branco ou escolher "Não tenho a certeza".</p>
+        <p>Quando estiveres pronta, carrega em "Enviar".</p>
+        <p>As tuas respostas ficam guardadas automaticamente.</p>
+        <p>Muito obrigada pelas tuas respostas, Paula.</p>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-start">Começar</button>
+    </div>
+
+    <div id="progress" class="progress-bar" style="display:none;">
+      <div class="progress-label" id="progress-label"></div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <form id="malva-form" style="display:none;">
+
+      <!-- SECÇÃO 1 -->
+      <div class="section" data-section="1">
+        <h2>Secção 1 — Sobre a MALVA</h2>
+        <p class="section-intro">Vamos começar por perceber melhor como funciona a MALVA hoje.<br>Não é preciso responder a tudo de uma vez.<br>Podes avançar a teu ritmo.</p>
+
+        <!-- 1.1 -->
+        <div class="question-group" data-field="produtos_online">
+          <label class="question-label">Quais destes produtos queres vender online? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Roupa"> Roupa</label>
+            <label class="option"><input type="checkbox" value="Joias / bijuteria"> Joias / bijuteria</label>
+            <label class="option"><input type="checkbox" value="Acessórios"> Acessórios</label>
+            <label class="option"><input type="checkbox" value="Malas"> Malas</label>
+            <label class="option"><input type="checkbox" value="Outros"> Outros</label>
+          </div>
+        </div>
+
+        <!-- 1.2 -->
+        <div class="question-group" data-field="categorias_vendidas">
+          <label class="question-label">Quais destas categorias vendem melhor na MALVA? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Roupa"> Roupa</label>
+            <label class="option"><input type="checkbox" value="Joias / bijuteria"> Joias / bijuteria</label>
+            <label class="option"><input type="checkbox" value="Acessórios"> Acessórios</label>
+            <label class="option"><input type="checkbox" value="Depende da coleção"> Depende da coleção</label>
+            <label class="option"><input type="checkbox" value="Não tenho a certeza"> Não tenho a certeza</label>
+          </div>
+        </div>
+
+        <!-- 1.3 -->
+        <div class="question-group" data-field="colecoes_roupa">
+          <label class="question-label">Como é que funcionam as coleções de roupa na MALVA? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Compro por coleções"> Compro por coleções</label>
+            <label class="option"><input type="checkbox" value="Os modelos vão mudando ao longo do tempo"> Os modelos vão mudando ao longo do tempo</label>
+            <label class="option"><input type="checkbox" value="Alguns produtos voltam a estar disponíveis noutra altura"> Alguns produtos voltam a estar disponíveis noutra altura</label>
+            <label class="option"><input type="checkbox" value="Quando esgotam, normalmente não voltam"> Quando esgotam, normalmente não voltam</label>
+            <label class="option"><input type="checkbox" value="Depende do fornecedor"> Depende do fornecedor</label>
+            <label class="option"><input type="checkbox" value="Não tenho a certeza"> Não tenho a certeza</label>
+          </div>
+        </div>
+
+        <!-- 1.4 -->
+        <div class="question-group" data-field="onde_vendes">
+          <label class="question-label">Onde é que os clientes te conseguem encontrar ou comprar hoje em dia? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Mercados / feiras"> Mercados / feiras</label>
+            <label class="option"><input type="checkbox" value="Instagram"> Instagram</label>
+            <label class="option"><input type="checkbox" value="Facebook"> Facebook</label>
+            <label class="option"><input type="checkbox" value="WhatsApp"> WhatsApp</label>
+            <label class="option"><input type="checkbox" value="TikTok"> TikTok</label>
+            <label class="option"><input type="checkbox" value="Clientes habituais"> Clientes habituais</label>
+            <label class="option"><input type="checkbox" value="Recomendações"> Recomendações</label>
+            <label class="option"><input type="checkbox" value="Outros"> Outros</label>
+          </div>
+        </div>
+
+        <!-- 1.5 -->
+        <div class="question-group" data-field="controle_stock">
+          <label class="question-label">Como é que controlas o stock da MALVA? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="De memória"> De memória</label>
+            <label class="option"><input type="checkbox" value="Faço anotações"> Faço anotações</label>
+            <label class="option"><input type="checkbox" value="No telemóvel"> No telemóvel</label>
+            <label class="option"><input type="checkbox" value="Tenho uma folha / lista"> Tenho uma folha / lista</label>
+            <label class="option"><input type="checkbox" value="O fornecedor informa-me"> O fornecedor informa-me</label>
+            <label class="option"><input type="checkbox" value="Não tenho um sistema fixo"> Não tenho um sistema fixo</label>
+            <label class="option"><input type="checkbox" value="Outro"> Outro</label>
+          </div>
+        </div>
+
+        <!-- 1.6 -->
+        <div class="question-group" data-field="perguntas_frequentes">
+          <label class="question-label">Quais são as perguntas que os clientes te fazem com mais frequência? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Preço"> Preço</label>
+            <label class="option"><input type="checkbox" value="Tamanhos"> Tamanhos</label>
+            <label class="option"><input type="checkbox" value="Disponibilidade"> Disponibilidade</label>
+            <label class="option"><input type="checkbox" value="Materiais"> Materiais</label>
+            <label class="option"><input type="checkbox" value="Cores"> Cores</label>
+            <label class="option"><input type="checkbox" value="Como combinar a peça"> Como combinar a peça</label>
+            <label class="option"><input type="checkbox" value="Reposição"> Reposição</label>
+            <label class="option"><input type="checkbox" value="Envios"> Envios</label>
+            <label class="option"><input type="checkbox" value="Trocas / devoluções"> Trocas / devoluções</label>
+            <label class="option"><input type="checkbox" value="Onde comprar depois"> Onde comprar depois</label>
+            <label class="option"><input type="checkbox" value="Outro"> Outro</label>
+          </div>
+        </div>
+
+        <!-- 1.7 -->
+        <div class="question-group" data-field="retorno_cliente">
+          <label class="question-label">Quando alguém conhece a MALVA num mercado ou feira, como costuma voltar a encontrá-la? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Instagram"> Instagram</label>
+            <label class="option"><input type="checkbox" value="Facebook"> Facebook</label>
+            <label class="option"><input type="checkbox" value="WhatsApp"> WhatsApp</label>
+            <label class="option"><input type="checkbox" value="Cartão"> Cartão</label>
+            <label class="option"><input type="checkbox" value="QR code"> QR code</label>
+            <label class="option"><input type="checkbox" value="Pesquisa online"> Pesquisa online</label>
+            <label class="option"><input type="checkbox" value="Já é cliente habitual"> Já é cliente habitual</label>
+            <label class="option"><input type="checkbox" value="Atualmente não existe um sistema claro"> Atualmente não existe um sistema claro</label>
+            <label class="option"><input type="checkbox" value="Outro"> Outro</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECÇÃO 2 -->
+      <div class="section" data-section="2">
+        <h2>Secção 2 — Como queres que trabalhemos contigo</h2>
+        <p class="section-intro">Agora vamos falar sobre como podemos trabalhar juntas.<br>Isto vai ajudar-nos a perceber o que é mais útil para ti.</p>
+
+        <!-- 2.1 -->
+        <div class="question-group" data-field="o_que_gerir">
+          <label class="question-label">De que partes gostavas que nós tratássemos por ti? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="checkbox" value="Adicionar produtos ao site"> Adicionar produtos ao site</label>
+            <label class="option"><input type="checkbox" value="Retirar produtos esgotados"> Retirar produtos esgotados</label>
+            <label class="option"><input type="checkbox" value="Atualizar preços"> Atualizar preços</label>
+            <label class="option"><input type="checkbox" value="Atualizar stock"> Atualizar stock</label>
+            <label class="option"><input type="checkbox" value="Carregar novas coleções"> Carregar novas coleções</label>
+            <label class="option"><input type="checkbox" value="Atualizar fotografias"> Atualizar fotografias</label>
+            <label class="option"><input type="checkbox" value="Manutenção técnica do site"> Manutenção técnica do site</label>
+            <label class="option"><input type="checkbox" value="Redes sociais"> Redes sociais</label>
+            <label class="option"><input type="checkbox" value="Preparação de conteúdo"> Preparação de conteúdo</label>
+            <label class="option"><input type="checkbox" value="Pinterest"> Pinterest</label>
+            <label class="option"><input type="checkbox" value="Email / comunicação com clientes"> Email / comunicação com clientes</label>
+            <label class="option"><input type="checkbox" value="Prefiro que tratem de tudo o que for necessário"> Prefiro que tratem de tudo o que for necessário</label>
+            <label class="option"><input type="checkbox" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 2.2 -->
+        <div class="question-group" data-field="nova_colecao">
+          <label class="question-label">Quando chega uma nova coleção, o que é que deve acontecer? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="nova_colecao" value="Colocar a roupa rapidamente no site"> Colocar a roupa rapidamente no site</label>
+            <label class="option"><input type="radio" name="nova_colecao" value="Anunciar primeiro no Instagram"> Anunciar primeiro no Instagram</label>
+            <label class="option"><input type="radio" name="nova_colecao" value="Instagram e site ao mesmo tempo"> Instagram e site ao mesmo tempo</label>
+            <label class="option"><input type="radio" name="nova_colecao" value="Quero que vocês organizem o lançamento"> Quero que vocês organizem o lançamento</label>
+            <label class="option"><input type="radio" name="nova_colecao" value="Não tenho a certeza"> Não tenho a certeza</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECÇÃO 3 -->
+      <div class="section" data-section="3">
+        <h2>Secção 3 — Envios</h2>
+        <p class="section-intro">Sabemos que atualmente utilizas os CTT para os envios e estás a avaliar uma conta GLS Business com recolha em casa.</p>
+
+        <!-- 3.1 -->
+        <div class="question-group" data-field="preferencia_envio">
+          <label class="question-label">Qual é a tua preferência para os envios? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="preferencia_envio" value="Continuar com os CTT"> Continuar com os CTT</label>
+            <label class="option"><input type="radio" name="preferencia_envio" value="Mudar para a GLS Business"> Mudar para a GLS Business</label>
+            <label class="option"><input type="radio" name="preferencia_envio" value="Usar CTT e GLS"> Usar CTT e GLS</label>
+            <label class="option"><input type="radio" name="preferencia_envio" value="Quero que me recomendem a melhor opção"> Quero que me recomendem a melhor opção</label>
+          </div>
+        </div>
+
+        <!-- 3.2 -->
+        <div class="question-group" data-field="estado_gls">
+          <label class="question-label">Em que ponto estás em relação à GLS? <span class="required">*</span></label>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="estado_gls" value="Já tenho conta GLS"> Já tenho conta GLS</label>
+            <label class="option"><input type="radio" name="estado_gls" value="Vou pedir informações à GLS"> Vou pedir informações à GLS</label>
+            <label class="option"><input type="radio" name="estado_gls" value="Quero que me indiquem o que devo perguntar à GLS"> Quero que me indiquem o que devo perguntar à GLS</label>
+            <label class="option"><input type="radio" name="estado_gls" value="Ainda não pesquisei"> Ainda não pesquisei</label>
+            <label class="option"><input type="radio" name="estado_gls" value="Prefiro falar sobre isto pessoalmente"> Prefiro falar sobre isto pessoalmente</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECÇÃO 4 -->
+      <div class="section" data-section="4">
+        <h2>Secção 4 — As nossas propostas para a MALVA</h2>
+        <p class="section-intro">Com base no que nos estás a partilhar, temos algumas ideias para a MALVA online.<br>Não precisas de decidir nada agora.<br>Basta indicares o que te interessa e falamos sobre isso depois.</p>
+
+        <!-- 4.1 -->
+        <div class="proposal" data-field="proposta_loja">
+          <h3>4.1 Loja online completa</h3>
+          <p class="proposal-desc">Os clientes podem ver os produtos, escolher tamanhos e cores, pagar online e receber o pedido diretamente.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Reforçar a confiança na MALVA e permitir vendas mesmo quando não estás nos mercados.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_loja" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_loja" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_loja" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_loja" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.2 -->
+        <div class="proposal" data-field="proposta_gestao">
+          <h3>4.2 Gestão do site por nossa conta</h3>
+          <p class="proposal-desc">Cuidamos de tudo: produtos, coleções, stock, preços, fotografias e manutenção. Tu não precisas de te preocupar com a parte técnica.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Para te concentrar em vender e no teu negócio, sem te preocupares com tecnologia.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_gestao" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_gestao" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_gestao" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_gestao" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.3 -->
+        <div class="proposal" data-field="proposta_foto">
+          <h3>4.3 Sessão presencial de fotografia e vídeo</h3>
+          <p class="proposal-desc">Uma sessão de aproximadamente 90 minutos, idealmente num dia de mercado. Capturamos os produtos, o teu posto, detalhes, tu, e o ambiente. Inclui também vídeos verticais.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Criar conteúdo real e autêntico para várias semanas, sem precisares de estar sempre a produzir conteúdo.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_foto" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_foto" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_foto" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_foto" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.4 IA -->
+        <div class="proposal" data-field="proposta_ia">
+          <h3>4.4 Criação de imagens com Inteligência Artificial</h3>
+          <p class="proposal-desc">Utilizamos fotografias reais dos produtos MALVA como base para criar novas imagens consistentes. A fotografia real continua a ser a base — a IA serve para expandir o conteúdo, não para substituir as fotos originais.</p>
+          <p class="proposal-what"><strong>Podemos criar:</strong></p>
+          <ul class="proposal-list">
+            <li>Modelos virtuais com os produtos</li>
+            <li>Imagens lifestyle</li>
+            <li>Campanhas e promoções</li>
+            <li>Cenários</li>
+            <li>Combinações / looks</li>
+            <li>Pinterest</li>
+            <li>Instagram</li>
+            <li>Site</li>
+          </ul>
+          <p class="proposal-why"><strong>Para quê?</strong> Aumentar a quantidade de conteúdo disponível sem precisares de uma nova sessão fotográfica para cada campanha.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_ia" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_ia" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_ia" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_ia" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+            <label class="option"><input type="radio" name="proposta_ia" value="Quero ver exemplos antes de decidir"> Quero ver exemplos antes de decidir</label>
+          </div>
+        </div>
+
+        <!-- 4.5 -->
+        <div class="proposal" data-field="proposta_conversao">
+          <h3>4.5 Converter clientes do mercado em clientes online</h3>
+          <p class="proposal-desc">Um sistema simples (QR code, embalagem, página específica) para que quem conheça a MALVA no mercado possa voltar a encontrá-la e comprar online.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Transformar uma compra pontual num cliente que pode voltar a comprar.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_conversao" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_conversao" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_conversao" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_conversao" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.6 -->
+        <div class="proposal" data-field="proposta_pinterest">
+          <h3>4.6 Pinterest</h3>
+          <p class="proposal-desc">Gerimos o Pinterest da MALVA com conteúdo que leva tráfico para o site.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Criar uma fonte de descoberta de longo prazo para a MALVA.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_pinterest" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_pinterest" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_pinterest" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_pinterest" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.7 -->
+        <div class="proposal" data-field="proposta_instagram">
+          <h3>4.7 Instagram gerido por nós</h3>
+          <p class="proposal-desc">Nós organizamos o calendário, selecionamos o material e preparamos as publicações. Tu não precisas de produzir conteúdo constantemente.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Manter uma presença regular sem aumentar a tua carga de trabalho.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_instagram" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_instagram" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_instagram" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_instagram" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.8 -->
+        <div class="proposal" data-field="proposta_base_clientes">
+          <h3>4.8 Base própria de clientes</h3>
+          <p class="proposal-desc">Criar uma base de contactos de clientes de forma adequada, para informar sobre novas coleções, reposições, mercados e promoções.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Para a MALVA não depender apenas do Instagram para voltar a comunicar com os clientes.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_base_clientes" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_base_clientes" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_base_clientes" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_base_clientes" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+
+        <!-- 4.9 -->
+        <div class="proposal" data-field="proposta_novas_colecoes">
+          <h3>4.9 Lançamento e gestão de novas coleções</h3>
+          <p class="proposal-desc">Tu envias-nos os produtos e a informação. Nós organizamos a saída online: catálogo, fotografias, site, stock, Instagram, Pinterest e comunicação com clientes.</p>
+          <p class="proposal-why"><strong>Para quê?</strong> Para que cada nova coleção não te obrigue a aprender ou gerir um novo processo técnico.</p>
+          <div class="options-list">
+            <label class="option"><input type="radio" name="proposta_novas_colecoes" value="Sim, tenho interesse"> Sim, tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_novas_colecoes" value="Não tenho interesse"> Não tenho interesse</label>
+            <label class="option"><input type="radio" name="proposta_novas_colecoes" value="Quero falar sobre isto pessoalmente"> Quero falar sobre isto pessoalmente</label>
+            <label class="option"><input type="radio" name="proposta_novas_colecoes" value="Prefiro decidir mais tarde"> Prefiro decidir mais tarde</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAMPO FINAL -->
+      <div class="section" data-section="5">
+        <div class="question-group" data-field="nota_livre">
+          <label class="question-label">Há alguma coisa que consideras indispensável para a MALVA online?</label>
+          <textarea class="text-area" id="nota_livre" placeholder="Se houver alguma coisa que não tenha surgido nas perguntas anteriores, podes escrever aqui."></textarea>
+        </div>
+      </div>
+
+      <!-- BOTÃO ENVIAR -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">Enviar</button>
+        <div id="form-status" class="form-status" style="display:none;"></div>
+      </div>
+
+    </form>
+
+    <footer>
+      <p>PENDING VISUAL REVIEW BY NOA/MURI</p>
+    </footer>
+  </div>
+
+  <script src="js/form.js"></script>
+</body>
+</html>
