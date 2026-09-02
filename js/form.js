@@ -98,7 +98,7 @@
   }
 
   function updateProgress(current) {
-    const total = 5;
+    const total = 4;
     const pct = Math.round((current / total) * 100);
     progressFill.style.width = pct + '%';
     progressLabel.textContent = 'Secção ' + current + ' de ' + total;
@@ -169,8 +169,8 @@
   sections.forEach(function (section, idx) {
     var num = parseInt(section.getAttribute('data-section'));
 
-    // Add "Next" button (except last section)
-    if (num < 5) {
+    // Add "Next" button (except last numbered section)
+    if (num < 4) {
       var nextBtn = document.createElement('button');
       nextBtn.type = 'button';
       nextBtn.className = 'btn btn-primary btn-next';
