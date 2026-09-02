@@ -22,32 +22,38 @@
   // Campos obrigatórios (checkboxes)
   const REQUIRED_CHECKBOXES = [
     'produtos_online',
-    'categorias_vendidas',
-    'colecoes_roupa',
-    'onde_vendes',
-    'controle_stock',
-    'perguntas_frequentes',
-    'retorno_cliente',
+    'best_sellers',
+    'funcionamento_colecoes',
+    'canais_atuais',
+    'stock_atual',
+    'perguntas_clientes',
+    'regresso_mercado',
+    'gestao_delegada',
   ];
 
   // Campos obrigatórios (radio)
   const REQUIRED_RADIO = [
     'nova_colecao',
-    'preferencia_envio',
-    'estado_gls',
+    'shipping_preference',
+    'gls_status',
   ];
 
-  // Campos opcionais
+  // Campos opcionais (radio)
   const OPTIONAL_RADIO = [
-    'proposta_loja',
-    'proposta_gestao',
-    'proposta_foto',
-    'proposta_ia',
-    'proposta_conversao',
-    'proposta_pinterest',
-    'proposta_instagram',
-    'proposta_base_clientes',
-    'proposta_novas_colecoes',
+    'prop_loja_online',
+    'prop_gestao_site',
+    'prop_foto_video',
+    'prop_ai',
+    'prop_market_to_online',
+    'prop_pinterest',
+    'prop_instagram',
+    'prop_base_clientes',
+    'prop_gestao_colecoes',
+  ];
+
+  // Campos multi-select (checkboxes adicionais)
+  const MULTI_CHECKBOX_FIELDS = [
+    'ai_usos',
   ];
 
   // ============================================================
@@ -123,16 +129,25 @@
     }
 
     if (num === 2) {
-      // Section 2: nova_colecao is required
-      var group = section.querySelector('[data-field="nova_colecao"]');
-      if (group && !group.querySelector('input[type="radio"]:checked')) {
+      // Section 2: nova_colecao and gestao_delegada are required
+      var group1 = section.querySelector('[data-field="nova_colecao"]');
+      if (group1 && !group1.querySelector('input[type="radio"]:checked')) {
         errors.push('nova_colecao');
+      }
+      var group2 = section.querySelector('[data-field="gestao_delegada"]');
+      if (group2) {
+        var inputs = group2.querySelectorAll('input[type="checkbox"]');
+        var hasChecked = false;
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].checked) { hasChecked = true; break; }
+        }
+        if (!hasChecked) errors.push('gestao_delegada');
       }
     }
 
     if (num === 3) {
       // Section 3: both radio fields are required
-      ['preferencia_envio', 'estado_gls'].forEach(function (field) {
+      ['shipping_preference', 'gls_status'].forEach(function (field) {
         var group = section.querySelector('[data-field="' + field + '"]');
         if (group && !group.querySelector('input[type="radio"]:checked')) {
           errors.push(field);
@@ -155,7 +170,7 @@
     var num = parseInt(section.getAttribute('data-section'));
 
     // Add "Next" button (except last section)
-    if (num < 5) {
+    if (num < 4) {
       var nextBtn = document.createElement('button');
       nextBtn.type = 'button';
       nextBtn.className = 'btn btn-primary btn-next';
@@ -193,9 +208,9 @@
   function collectData() {
     var data = {};
 
-    // Collect all checkbox fields
-    var checkboxFields = REQUIRED_CHECKBOXES.concat(OPTIONAL_RADIO);
-    checkboxFields.forEach(function (field) {
+    // Collect all checkbox fields (required + multi)
+    var allCheckboxFields = REQUIRED_CHECKBOXES.concat(MULTI_CHECKBOX_FIELDS);
+    allCheckboxFields.forEach(function (field) {
       var inputs = form.querySelectorAll('[data-field="' + field + '"] input[type="checkbox"]');
       if (inputs.length === 0) return;
       var checked = [];
@@ -214,9 +229,9 @@
       data[field] = checked ? checked.value : '';
     });
 
-    // Collect free text
-    var notaLivre = document.getElementById('nota_livre');
-    data['nota_livre'] = notaLivre ? notaLivre.value.trim() : '';
+    // Collect free text (comentarios)
+    var comentarios = document.getElementById('comentarios');
+    data['comentarios'] = comentarios ? comentarios.value.trim() : '';
 
     return data;
   }
@@ -238,6 +253,7 @@
     // Add fixed fields
     data['Cliente'] = 'Paula';
     data['form_version'] = 'MALVA_INTAKE_v1';
+    data['shipping_current'] = 'CTT';
 
     // UI: show sending state
     btnSubmit.disabled = true;
@@ -271,12 +287,15 @@
       return response.text();
     })
     .then(function (text) {
+      // Only clear localStorage after server confirms success
+      localStorage.removeItem('malva_intake_data');
       statusEl.className = 'form-status success';
       statusEl.textContent = 'Muito obrigada pelas tuas respostas, Paula.';
       btnSubmit.textContent = 'Enviado';
     })
     .catch(function (err) {
       console.error('Envio falhou:', err);
+      // Do NOT clear localStorage on failure — preserve draft
       statusEl.className = 'form-status error';
       statusEl.textContent = 'Algo correu mal. Tenta novamente, por favor.';
       btnSubmit.disabled = false;
@@ -292,8 +311,9 @@
   if (saved) {
     try {
       var parsed = JSON.parse(saved);
-      // Restore checkboxes
-      Object.keys(parsed).forEach(function (key) {
+      // Restore checkboxes (all checkbox fields)
+      var allCheckboxFields = REQUIRED_CHECKBOXES.concat(MULTI_CHECKBOX_FIELDS);
+      allCheckboxFields.forEach(function (key) {
         var val = parsed[key];
         if (!val) return;
         var values = val.split(';');
@@ -306,6 +326,23 @@
           });
         }
       });
+      // Restore radio buttons
+      var radioFields = REQUIRED_RADIO.concat(OPTIONAL_RADIO);
+      radioFields.forEach(function (key) {
+        var val = parsed[key];
+        if (!val) return;
+        var radios = form.querySelectorAll('input[name="' + key + '"]');
+        radios.forEach(function (radio) {
+          if (radio.value === val) {
+            radio.checked = true;
+          }
+        });
+      });
+      // Restore free text
+      if (parsed['comentarios']) {
+        var comentarios = document.getElementById('comentarios');
+        if (comentarios) comentarios.value = parsed['comentarios'];
+      }
     } catch (e) {
       // Ignore parse errors
     }
