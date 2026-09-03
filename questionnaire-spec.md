@@ -364,6 +364,26 @@ Aumentar a quantidade de conteúdo disponível sem precisares de uma nova sessã
 
 ---
 
+### 4.4b Canais de uso das imagens (ai_usos)
+
+**Pergunta adicional:**
+
+“Onde te sentirias confortável a usar estas imagens?”
+
+**Tipo:** Múltipla
+**Obrigatório:** Não
+**Campo interno:** ai_usos
+
+**Opções:**
+
+- Instagram
+- Pinterest
+- Site
+- Campanhas / promoções
+- Quero ver exemplos primeiro
+
+---
+
 ### 4.5 Converter clientes do mercado em clientes online
 
 **Explicação:**  
