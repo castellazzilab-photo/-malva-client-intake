@@ -177,7 +177,7 @@
 
 ---
 
-## Secção 2 — Como queres que trabalhemos contigo
+## Secção 2 — Como gostavas que te ajudássemos
 
 **Texto introdutório:**
 
@@ -220,7 +220,7 @@
 **Obrigatório:** Sim
 
 **Opções:**
-- Colocar a roupa rapidamente no site
+- Colocar os novos produtos rapidamente no site
 - Anunciar primeiro no Instagram
 - Instagram e site ao mesmo tempo
 - Quero que vocês organizem o lançamento
@@ -443,10 +443,10 @@ Para a MALVA não depender apenas do Instagram para voltar a comunicar com os cl
 ### 4.9 Lançamento e gestão de novas coleções
 
 **Explicação:**  
-Coordenamos a saída online de novas coleções: organizamos a publicação no site, atualizamos stock e preços, e gerimos a comunicação com os clientes existentes.
+Quando chega uma nova coleção, podemos coordenar todo o lançamento online e juntar os serviços que tiveres escolhido: atualização do site, catálogo, stock, conteúdo, Instagram, Pinterest e comunicação com clientes.
 
 **Para quê?**  
-Para que cada nova coleção não te obrigue a aprender ou gerir um novo processo técnico.
+Para teres um único processo organizado sempre que chega uma nova coleção.
 
 **Tipo:** Única  
 **Obrigatório:** Não
