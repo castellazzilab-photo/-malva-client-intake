@@ -16,18 +16,16 @@
 ## Texto de Boas-Vindas
 
 > Olá, Paula.  
->  
+
 > Para te ajudar a organizar a MALVA online, precisamos de perceber melhor como funciona o teu negócio.  
->  
+
 > Este questionário demora cerca de 10 minutos.  
 > Podes responder com calma e avançar ao teu ritmo.  
->  
-> Basta escolheres as opções que fazem sentido para ti.  
-> Se não tiveres a certeza, podes deixar em branco ou escolher "Não tenho a certeza".  
->  
-> Quando estiveres pronta, carrega em "Enviar".  
-> As tuas respostas ficam guardadas automaticamente.  
->  
+
+> Se não tiveres a certeza, podes escolher «Não tenho a certeza» sempre que essa opção estiver disponível.  
+
+> Quando estiveres pronta, carrega em «Enviar».  
+
 > Muito obrigada pelas tuas respostas, Paula.
 
 ---
@@ -71,6 +69,8 @@
 - Roupa
 - Joias / bijuteria
 - Acessórios
+- Malas
+- Outros
 - Depende da coleção
 - Não tenho a certeza
 
@@ -97,7 +97,7 @@
 ### 1.4 Onde vendes atualmente
 
 **Pergunta:**  
-*Onde é que os clientes te conseguem encontrar ou comprar hoje em dia?*
+*Como é que vendes atualmente ou como é que os clientes chegam até à MALVA?*
 
 **Tipo:** Múltipla  
 **Obrigatório:** Sim
@@ -274,7 +274,7 @@
 **Texto introdutório:**
 
 > Com base no que nos estás a partilhar, temos algumas ideias para a MALVA online.  
->  
+
 > Não precisas de decidir nada agora.  
 > Basta indicares o que te interessa e falamos sobre isso depois.
 
@@ -283,7 +283,7 @@
 ### 4.1 Loja online completa
 
 **Explicação:**  
-Os clientes podem ver os produtos, escolher tamanhos e cores, pagar online e receber o pedido diretamente.
+Os clientes podem ver os produtos, escolher as opções disponíveis, pagar online e receber a encomenda.
 
 **Para quê?**  
 Reforçar a confiança na MALVA e permitir vendas mesmo quando não estás nos mercados.
@@ -302,10 +302,10 @@ Reforçar a confiança na MALVA e permitir vendas mesmo quando não estás nos m
 ### 4.2 Gestão do site por nossa conta
 
 **Explicação:**  
-Cuidamos de tudo: produtos, coleções, stock, preços, fotografias e manutenção. Tu não precisas de te preocupar com a parte técnica.
+Cuidamos da gestão do site: adicionar e retirar produtos, atualizar preços e stock, organizar coleções e tratar da manutenção técnica.
 
 **Para quê?**  
-Para te concentrar em vender e no teu negócio, sem te preocupares com tecnologia.
+Para não teres de te preocupar com a gestão diária da loja online nem com a parte técnica.
 
 **Tipo:** Única  
 **Obrigatório:** Não
@@ -348,9 +348,6 @@ Utilizamos fotografias reais dos produtos MALVA como base para criar novas image
 - Campanhas e promoções
 - Cenários
 - Combinações / looks
-- Pinterest
-- Instagram
-- Site
 
 **Para quê?**  
 Aumentar a quantidade de conteúdo disponível sem precisares de uma nova sessão fotográfica para cada campanha.
@@ -370,7 +367,7 @@ Aumentar a quantidade de conteúdo disponível sem precisares de uma nova sessã
 ### 4.5 Converter clientes do mercado em clientes online
 
 **Explicação:**  
-Um sistema simples (QR code, embalagem, página específica) para que quem conheça a MALVA no mercado possa voltar a encontrá-la e comprar online.
+Criamos uma forma simples para quem conhece a MALVA num mercado voltar a encontrá-la online, por exemplo através de QR codes em cartões ou embalagens ligados diretamente ao site.
 
 **Para quê?**  
 Transformar uma compra pontual num cliente que pode voltar a comprar.
@@ -427,7 +424,7 @@ Manter uma presença regular sem aumentar a tua carga de trabalho.
 ### 4.8 Base própria de clientes
 
 **Explicação:**  
-Criar uma base de contactos de clientes de forma adequada, para informar sobre novas coleções, reposições, mercados e promoções.
+Criar uma base de contactos, com autorização dos clientes, para comunicar novas coleções, reposições, mercados e promoções.
 
 **Para quê?**  
 Para a MALVA não depender apenas do Instagram para voltar a comunicar com os clientes.
@@ -446,7 +443,7 @@ Para a MALVA não depender apenas do Instagram para voltar a comunicar com os cl
 ### 4.9 Lançamento e gestão de novas coleções
 
 **Explicação:**  
-Tu envias-nos os produtos e a informação. Nós organizamos a saída online: catálogo, fotografias, site, stock, Instagram, Pinterest e comunicação com clientes.
+Coordenamos a saída online de novas coleções: organizamos a publicação no site, atualizamos stock e preços, e gerimos a comunicação com os clientes existentes.
 
 **Para quê?**  
 Para que cada nova coleção não te obrigue a aprender ou gerir um novo processo técnico.
