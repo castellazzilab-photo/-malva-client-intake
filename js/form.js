@@ -13,7 +13,7 @@
 
   // PREENCHER COM A URL DO GOOGLE APPS SCRIPT DEPLOYADO
   // Exemplo: https://script.google.com/macros/s/XXXXXX/exec
-  const APPS_SCRIPT_URL = '';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbztGqWTVRTzUIJcrhyWkfYlXmAB3Iq4ybgG9jmhnqVG_cnLBJKBYD9jGMKAqgHlMf2h/exec';
 
   // ============================================================
   // FIELD DEFINITIONS (from questionnaire-spec.md)

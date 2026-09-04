@@ -5,9 +5,9 @@
  */
 
 // ============================================================
-// CONFIG — Spreadsheet ID (put the real ID here after deployment)
+// CONFIG — Spreadsheet ID
 // ============================================================
-var SPREADSHEET_ID = 'SPREADSHEET_ID_AQUI';
+var SPREADSHEET_ID = '1D0-aWpZJNV74914IHZVrmQROzRbNQkSdc-TGVQGhIgE';
 
 // ============================================================
 // Column mapping (matching data-schema.md)
@@ -108,8 +108,6 @@ function buildRow(params) {
 // responseJSON — return JSON response (CORS-compatible)
 // ============================================================
 function responseJSON(data) {
-  return ContentService.createTextOutput(
-    JSON.stringify(data),
-    ContentService.MimeType.JSON
-  );
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
 }
