@@ -67,6 +67,25 @@
   const progressEl = document.getElementById('progress');
   const progressFill = document.getElementById('progress-fill');
   const progressLabel = document.getElementById('progress-label');
+  const aiUsosSection = document.getElementById('ai-usos-section');
+
+  function syncAiUsosVisibility() {
+    var selected = form.querySelector('input[name="prop_ai"]:checked');
+    var shouldShow = selected && selected.value !== 'Não tenho interesse';
+
+    aiUsosSection.style.display = shouldShow ? '' : 'none';
+
+    if (!shouldShow) {
+      var inputs = aiUsosSection.querySelectorAll('input[type="checkbox"]');
+      inputs.forEach(function (input) {
+        input.checked = false;
+      });
+    }
+  }
+
+  form.querySelectorAll('input[name="prop_ai"]').forEach(function (input) {
+    input.addEventListener('change', syncAiUsosVisibility);
+  });
 
   // ============================================================
   // START FORM
@@ -343,6 +362,8 @@
         var comentarios = document.getElementById('comentarios');
         if (comentarios) comentarios.value = parsed['comentarios'];
       }
+
+      syncAiUsosVisibility();
     } catch (e) {
       // Ignore parse errors
     }
